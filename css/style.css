@@ -111,3 +111,17 @@ body.no-anim *,body.no-anim{animation:none!important;transition:none!important;s
 .hero-tags span{border:0;padding:0}.hero-tags{gap:16px}
 @media(max-width:800px){.skill-group{grid-template-columns:1fr;gap:12px;padding:24px 0}.skill-group h3{padding:0}.project{gap:24px}.veille-grid,.interest-grid{grid-template-columns:1fr}.interest-grid{gap:26px}.about-card{padding:0}}
 @media(max-width:420px){.skill-row{grid-template-columns:.85fr 1.15fr;gap:12px}.skill-row dt{font-size:.85rem}.skill-row dd{font-size:.76rem}.stage-meta{grid-template-columns:1fr;gap:16px}.about-card{padding:0}}
+
+/* Niveaux visibles sans encadrer chaque compétence. */
+.skill-row{align-items:center;padding:13px 0}
+.skill-status{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:5px 11px;border-radius:999px;font-size:.75rem;font-weight:600;line-height:1.5}
+.status-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:12px;height:12px;font-size:.7rem;line-height:1}
+.status-acquired{color:#176241;background:#dcefe2}
+.status-practice{color:#225d85;background:#e2edf7}.status-practice .status-icon{width:7px;height:7px;margin:0 2px;border-radius:50%;background:currentColor}
+.status-learning{color:#805016;background:#f7e9ce}.status-learning .status-icon{border:2px solid currentColor;border-right-color:transparent;border-radius:50%}
+.status-basics{color:#56645a;background:#e9eee7}.status-basics .status-icon{width:8px;height:8px;margin:0 2px;border:1.5px solid currentColor;border-radius:50%}
+[data-theme="dark"] .status-acquired{color:#b3e5c2;background:#2b4934}
+[data-theme="dark"] .status-practice{color:#b3d9f4;background:#2b4050}
+[data-theme="dark"] .status-learning{color:#f3d298;background:#4a3c25}
+[data-theme="dark"] .status-basics{color:#c3d0c3;background:#344238}
+@media(max-width:420px){.skill-row{grid-template-columns:.9fr 1.1fr;gap:10px}.skill-status{font-size:.69rem;padding:5px 8px;gap:6px}}
