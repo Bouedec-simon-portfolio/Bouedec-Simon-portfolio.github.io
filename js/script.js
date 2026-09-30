@@ -58,6 +58,29 @@
     if (event.matches) setMenu(false);
   });
 
+  // Indique la rubrique consultée dans les deux menus.
+  var navigationLinks = document.querySelectorAll('header nav a, .mobile-nav a');
+  function markSection(id) {
+    navigationLinks.forEach(function (link) {
+      if (link.getAttribute('href') === '#' + id) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  markSection(window.location.hash.slice(1) || 'accueil');
+  navigationLinks.forEach(function (link) {
+    link.addEventListener('click', function () { markSection(link.getAttribute('href').slice(1)); });
+  });
+  if ('IntersectionObserver' in window) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) markSection(entry.target.id);
+      });
+    }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+    document.querySelectorAll('main section').forEach(function (section) {
+      if (Array.prototype.some.call(navigationLinks, function (link) { return link.getAttribute('href') === '#' + section.id; })) sectionObserver.observe(section);
+    });
+  }
+
   // Illustrations statiques : lisibles immédiatement, sans animation automatique.
   var lines = [
     [true, 'whoami'], [false, 'simon'], [true, 'pwd'], [false, '/home/simon'],

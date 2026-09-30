@@ -125,3 +125,22 @@ body.no-anim *,body.no-anim{animation:none!important;transition:none!important;s
 [data-theme="dark"] .status-learning{color:#f3d298;background:#4a3c25}
 [data-theme="dark"] .status-basics{color:#c3d0c3;background:#344238}
 @media(max-width:420px){.skill-row{grid-template-columns:.9fr 1.1fr;gap:10px}.skill-status{font-size:.69rem;padding:5px 8px;gap:6px}}
+
+/* Navigation inspirée d'un terminal, avec des accès distincts. */
+html{scroll-padding-top:155px}
+header{display:grid;grid-template-columns:1fr auto;gap:12px 24px;padding:14px 32px;background:var(--paper);border-bottom:2px solid var(--brick);box-shadow:0 5px 20px #162a1c0a}
+.logo{width:fit-content;font-size:.9rem;gap:12px;font-weight:600}
+.terminal-symbol{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--line);border-radius:6px;background:var(--paper-2);color:var(--brick);font-family:var(--mono);font-size:1rem}
+.logo-bracket{color:var(--brick);font-weight:400}
+header nav{grid-column:1/-1;grid-row:2;padding-top:12px;border-top:1px solid var(--line-soft)}
+header nav ul{justify-content:center;gap:8px;flex-wrap:wrap}
+header nav a{display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;min-height:38px;border:1px solid var(--line);border-radius:6px;background:var(--bg-0);font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);transition:background .2s,border-color .2s,color .2s}
+header nav a:hover{background:var(--brick-soft);border-color:var(--brick);color:var(--ink)}
+header nav a[aria-current="location"]{background:var(--brick);border-color:var(--brick);color:var(--bg-0);font-weight:600}
+.header-actions{border-left:1px solid var(--line);padding-left:20px}
+.theme-toggle,.burger{border-radius:6px}
+.mobile-nav{border-radius:8px;border-top:2px solid var(--brick);gap:8px;padding:12px}
+.mobile-nav a{border:1px solid var(--line);border-radius:5px;background:var(--bg-0);font-family:var(--mono);font-size:.88rem}
+.mobile-nav a[aria-current="location"]{background:var(--brick-soft);border-color:var(--brick);color:var(--ink)}
+@media(max-width:1250px){html{scroll-padding-top:100px}header{padding:14px 24px;gap:12px}.mobile-nav{top:84px}}
+@media(max-width:420px){header{padding:12px 16px;gap:8px}.logo{font-size:.72rem;gap:8px}.terminal-symbol{width:28px;height:32px;font-size:.86rem}.header-actions{padding-left:10px;gap:6px}.burger{width:36px;height:40px}.theme-toggle{width:36px}.mobile-nav{top:78px}}
