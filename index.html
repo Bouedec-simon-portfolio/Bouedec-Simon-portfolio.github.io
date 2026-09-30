@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simon Bouëdec — BTS SIO SLAM | Portfolio Développeur</title>
+<title>Simon Bouëdec, portfolio développeur BTS SIO SLAM</title>
 <meta name="description" content="Portfolio de Simon Bouëdec, étudiant en BTS SIO option SLAM. Développement web, logiciel, systèmes et réseaux.">
+<script src="js/theme.js"></script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,7 +27,14 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+  <div class="header-actions">
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Passer au thème sombre" aria-pressed="false">
+      <svg class="theme-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+      <svg class="theme-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+      <span class="theme-label">Sombre</span>
+    </button>
+    <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
 <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" inert>
@@ -46,10 +54,10 @@
 <section class="hero" id="accueil">
   <div class="wrap hero-inner">
     <div class="hero-copy">
-    <div class="hero-eyebrow"><span class="status-dot" aria-hidden="true"></span> BTS SIO · option SLAM · Ploemeur</div>
+    <div class="hero-eyebrow"><span class="status-dot" aria-hidden="true"></span> BTS SIO option SLAM à Ploemeur</div>
     <h1>Simon Bouëdec<span class="hero-period">.</span></h1>
     <h2>Apprendre. Coder. Construire.</h2>
-    <div class="stack-line">Développement web · Logiciel · Technologies</div>
+    <div class="stack-line">Développement web et logiciel</div>
     <p class="tagline">Je transforme mes idées en projets concrets, une ligne de code à la fois.</p>
     <div class="hero-cta">
       <a href="#projets" class="btn btn-primary">Voir mes projets <span aria-hidden="true">↗</span></a>
@@ -66,7 +74,7 @@
   approche: <span class="code-string">"apprendre en faisant"</span>,
   curiosite: <span class="code-key">true</span>
 };</code></pre>
-      <div class="code-bottom"><span class="status-dot" aria-hidden="true"></span> Une idée → un projet concret</div>
+      <div class="code-bottom"><span class="status-dot" aria-hidden="true"></span> Des idées qui deviennent des projets</div>
     </aside>
   </div>
   <div class="scroll-cue"><div class="line"></div>La suite, juste en dessous ↓</div>
@@ -86,8 +94,8 @@
       <div class="about-card reveal">
         <dl>
           <dt>Âge</dt><dd>20 ans</dd>
-          <dt>Formation</dt><dd>BTS SIO — Option SLAM</dd>
-          <dt>Année</dt><dd>1ère année · 2025–2026</dd>
+          <dt>Formation</dt><dd>BTS SIO option SLAM</dd>
+          <dt>Année</dt><dd>Première année en 2025 et 2026</dd>
           <dt>Établissement</dt><dd>Lycée Notre-Dame de la Paix, Ploemeur</dd>
         </dl>
         <hr>
@@ -110,7 +118,7 @@
     <div class="timeline">
       <div class="t-item reveal">
         <div class="t-dot"></div>
-        <div class="t-year">2024 — 2025</div>
+        <div class="t-year">2024 à 2025</div>
         <div class="t-title">Baccalauréat</div>
         <ul>
           <li>Obtention du baccalauréat</li>
@@ -119,8 +127,8 @@
       </div>
       <div class="t-item reveal">
         <div class="t-dot"></div>
-        <div class="t-year">2025 — 2026</div>
-        <div class="t-title">BTS SIO — Option SLAM</div>
+        <div class="t-year">2025 à 2026</div>
+        <div class="t-title">BTS SIO option SLAM</div>
         <ul>
           <li>Première année, développement web et logiciel</li>
           <li>Découverte de technologies professionnelles</li>
@@ -175,7 +183,7 @@
   <div class="wrap">
     <div class="eyebrow">compétences techniques</div>
     <h2 class="section-title reveal">Ce que je pratique aujourd'hui</h2>
-    <p class="section-lede reveal">Un aperçu honnête de mon niveau actuel — en cours de progression sur la plupart de ces technologies.</p>
+    <p class="section-lede reveal">Un aperçu de mon niveau actuel. Je continue à progresser sur la plupart de ces technologies.</p>
     <div class="skill-groups">
 
       <div class="skill-group reveal">
@@ -328,13 +336,13 @@
 <section id="stage">
   <div class="wrap">
     <div class="eyebrow">expérience professionnelle</div>
-    <h2 class="section-title reveal">Stage — Lab-Concepts</h2>
+    <h2 class="section-title reveal">Mon stage chez Lab-Concepts</h2>
     <p class="section-lede reveal">Développement web et solutions digitales, encadré par Olivier Le Liboux.</p>
 
     <div class="stage-meta reveal">
       <div><dt>Entreprise</dt><dd>Lab-Concepts</dd></div>
       <div><dt>Domaine</dt><dd>Développement web & solutions digitales</dd></div>
-      <div><dt>Période</dt><dd>26/05/2026 → 04/07/2026</dd></div>
+      <div><dt>Période</dt><dd>Du 26/05/2026 au 04/07/2026</dd></div>
       <div><dt>Tuteur</dt><dd>Olivier Le Liboux</dd></div>
       <div><dt>Technologies</dt><dd>Symfony, Vue.js, Twig, Git</dd></div>
     </div>
@@ -368,7 +376,7 @@
     <h2 class="section-title reveal">Sous le capot</h2>
     <div class="sys-grid">
       <div class="reveal">
-        <p style="color:var(--ink-soft); margin-bottom:20px;">Des notions étudiées en formation, pratiquées via des exercices et des projets — administration Linux d'un côté, bases du réseau de l'autre.</p>
+        <p style="color:var(--ink-soft); margin-bottom:20px;">Des notions étudiées en formation et mises en pratique dans mes projets : administration Linux et bases du réseau.</p>
         <div class="notion-list">
           <span>Commandes Linux</span><span>Gestion des fichiers</span><span>Permissions</span>
           <span>Utilisateurs</span><span>Groupes</span><span>Bash</span>
@@ -381,7 +389,7 @@
           <div class="terminal-bar"><span></span><span></span><span></span><span class="name">simon@debian: ~</span></div>
           <div class="terminal-body" id="term-body"></div>
         </div>
-        <div class="terminal-note">Terminal illustratif — aucune commande n'est réellement exécutée.</div>
+        <div class="terminal-note">Ce terminal est une illustration. Les commandes ne sont pas exécutées.</div>
       </div>
     </div>
   </div>
@@ -522,7 +530,7 @@
   <div class="wrap footer-inner">
     <div>
       <div class="f-name">Simon Bouëdec</div>
-      <div class="f-sub">BTS SIO — Option SLAM · Développement web • Logiciel • Informatique</div>
+      <div class="f-sub">BTS SIO option SLAM, développement web et logiciel</div>
     </div>
     <div>
       <div class="f-quote">« Le code d'aujourd'hui est l'opportunité de demain. »</div>

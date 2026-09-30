@@ -1,5 +1,27 @@
 (function () {
   'use strict';
+  var root = document.documentElement;
+  var themeToggle = document.getElementById('theme-toggle');
+  var colorPreference = window.matchMedia('(prefers-color-scheme: dark)');
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem('portfolio-theme'); } catch (error) {}
+  function applyTheme(theme) {
+    var dark = theme === 'dark';
+    root.dataset.theme = dark ? 'dark' : 'light';
+    themeToggle.setAttribute('aria-pressed', String(dark));
+    themeToggle.setAttribute('aria-label', dark ? 'Passer au thème clair' : 'Passer au thème sombre');
+    themeToggle.querySelector('.theme-label').textContent = dark ? 'Clair' : 'Sombre';
+  }
+  applyTheme(root.dataset.theme);
+  themeToggle.addEventListener('click', function () {
+    savedTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(savedTheme);
+    try { localStorage.setItem('portfolio-theme', savedTheme); } catch (error) {}
+  });
+  colorPreference.addEventListener('change', function (event) {
+    if (savedTheme !== 'light' && savedTheme !== 'dark') applyTheme(event.matches ? 'dark' : 'light');
+  });
+
   var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   var motionOff = motionPreference.matches;
   var toggle = document.getElementById('a11y-toggle');
@@ -32,7 +54,7 @@
   document.addEventListener('click', function (event) {
     if (!mobileNav.contains(event.target) && !burger.contains(event.target)) setMenu(false);
   });
-  window.matchMedia('(min-width: 1101px)').addEventListener('change', function (event) {
+  window.matchMedia('(min-width: 1251px)').addEventListener('change', function (event) {
     if (event.matches) setMenu(false);
   });
 
@@ -41,7 +63,7 @@
     [true, 'whoami'], [false, 'simon'], [true, 'pwd'], [false, '/home/simon'],
     [true, 'ls -la'], [false, 'drwxr-xr-x  projet_symfony/'],
     [true, 'cd /var/www'], [true, 'sudo systemctl status apache2'],
-    [false, '● apache2.service — active (running)']
+    [false, '● apache2.service : active (running)']
   ];
   var terminal = document.getElementById('term-body');
   lines.forEach(function (line) {
