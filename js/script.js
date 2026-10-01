@@ -81,35 +81,4 @@
     });
   }
 
-  // Illustrations statiques : lisibles immédiatement, sans animation automatique.
-  var lines = [
-    [true, 'whoami'], [false, 'simon'], [true, 'pwd'], [false, '/home/simon'],
-    [true, 'ls -la'], [false, 'drwxr-xr-x  projet_symfony/'],
-    [true, 'cd /var/www'], [true, 'sudo systemctl status apache2'],
-    [false, '● apache2.service : active (running)']
-  ];
-  var terminal = document.getElementById('term-body');
-  lines.forEach(function (line) {
-    var row = document.createElement('div');
-    if (line[0]) {
-      var prompt = document.createElement('span');
-      prompt.className = 'prompt';
-      prompt.textContent = 'simon@debian:~$ ';
-      row.appendChild(prompt);
-    }
-    row.appendChild(document.createTextNode(line[1]));
-    terminal.appendChild(row);
-  });
-  var queries = [
-    '<span class="sql-kw">SELECT</span> nom, statut <span class="sql-kw">FROM</span> projets;',
-    '<span class="sql-kw">INSERT INTO</span> projets (nom, statut) <span class="sql-kw">VALUES</span> (<span class="sql-str">\'Serveur_LAMP\'</span>, <span class="sql-str">\'terminé\'</span>);',
-    '<span class="sql-kw">UPDATE</span> projets <span class="sql-kw">SET</span> statut = <span class="sql-str">\'terminé\'</span> <span class="sql-kw">WHERE</span> id = 3;',
-    '<span class="sql-kw">SELECT</span> * <span class="sql-kw">FROM</span> projets <span class="sql-kw">ORDER BY</span> id <span class="sql-kw">ASC</span>;'
-  ];
-  queries.forEach(function (query) {
-    var row = document.createElement('div');
-    row.className = 'sql-line';
-    row.innerHTML = query;
-    document.getElementById('sql-console').appendChild(row);
-  });
 })();
